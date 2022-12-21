@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+static double function11(double x) {
+    return 2 * (pow(x, 2)) + 3 * x - 8;
+}
+
+static double function21(double x, double y) {
+    return (-2 * pow(x, 2) * y) + 2 * x * y + 4;
+}
+
+static double Integrate1d(double(*f)(double), double x1, double x2, int iterations);
+
+
+int main(void) {
+
+    double x1 = 0, x2 = 10;
+    int iterations = 10000;
+
+    double result = Integrate1d(function11, x1, x2, iterations);
+
+    printf("Integral from %lf, to %lf, equals to: %lf", x1, x2, result);
+
+
+    return 0;
+}
+
+static double Integrate1d(double(*f)(double), double x1, double x2, int iterations) {
+    double step = (x2 - x1) / iterations;
+    double result = 0;
+
+    for (double i = x1; i < x2; i += step) {
+        result += (*f)(i) * step;
+    }
+
+    return result;
+}

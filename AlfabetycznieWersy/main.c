@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define N_MAX 100 // <- max ilośc znaków w wersie
-#define MAX 100 // <- max ilość wersów
+#define N_MAX 100 // teoretycznie można rozdzielic na max długość wersów i ilość  
 
 //Nie działało mi w Clion na macu, ani windowsie. Ale z jakiegoś powodu xcode w linux mi wszedł. Chodziło o różnicę w odbiorze EOF
 
@@ -23,12 +22,12 @@ int compare(const void *a, const void *b) {
 }
 
 int main() {
-    char *Tekst[MAX];
+    char *Tekst[N_MAX];
     int i = 0;
 
     char wiersz[N_MAX];
 
-    while (fgets(wiersz, N_MAX, stdin) != NULL&&i < MAX) {
+    while (fgets(wiersz, N_MAX, stdin) != NULL&&i < N_MAX) {
 
         if (wiersz[0] == '\n')
             continue;

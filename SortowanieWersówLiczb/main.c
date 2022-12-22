@@ -41,8 +41,8 @@ int main() {
 
 // sortowanie tablicy wierszy
     for(int j = 0; j < i - 1;){
-        int a = atoi(Tekst[j]);
-        int b = atoi(Tekst[j+1]);
+        double a = atoi(Tekst[j]);
+        double b = atoi(Tekst[j+1]);
         if(tempxy == 1){
             if(a > b){
                 char *temp = Tekst[j];

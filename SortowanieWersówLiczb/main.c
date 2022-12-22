@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define N_MAX 100 
+#define N_MAX 100
 
 
 void swap(int *a, int *b) {
@@ -49,15 +49,17 @@ int main() {
                 Tekst[j] = Tekst[j + 1];
                 Tekst[j + 1] = temp;
                 j = 0;
+                continue;
             }
             j++;
         }
-        else if(tempxy == 1){
+        else if(tempxy == 0){
             if(a < b){
                 char *temp = Tekst[j];
                 Tekst[j] = Tekst[j + 1];
                 Tekst[j + 1] = temp;
                 j = 0;
+                continue;
             }
             j++;
         }
@@ -71,3 +73,4 @@ int main() {
             free(Tekst[j]);
 
 }
+
